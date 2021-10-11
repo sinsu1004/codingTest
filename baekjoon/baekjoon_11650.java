@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.StringTokenizer;
 
 
@@ -26,13 +27,24 @@ public class baekjoon_11650 {
             xy[i][0]=Integer.parseInt(st.nextToken());
             xy[i][1]=Integer.parseInt(st.nextToken());
         }
-        Arrays.sort(xy,(x,y)->{
-            if(x[0] ==y[0]){
-                return x[1]-y[1];
-            }
-            else {
-                return x[0]-y[0];
-            }
+        // Arrays.sort(xy,(x,y)->{
+        //     if(x[0] ==y[0]){
+        //         return x[1]-y[1];
+        //     }
+        //     else {
+        //         return x[0]-y[0];
+        //     }
+        // });
+
+        Arrays.sort(xy,new Comparator<int[]>(){
+           public int compare(int[] s1,int[] s2){
+               if(s1[0]==s2[0]){
+                   return s1[1]-s2[1];
+               }
+               else{
+                   return s1[0]-s2[0];
+               }
+           } 
         });
 
         StringBuilder sb=new StringBuilder();
