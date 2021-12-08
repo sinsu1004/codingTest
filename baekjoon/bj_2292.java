@@ -11,12 +11,11 @@ public class bj_2292 {
 
         int n=Integer.parseInt(br.readLine());
         int answer=1;
-        int min=2;
+        int min=1;
         
 
         while(min<n){
             min = min+(6*answer);
-            min--;
             answer++;
 
         }     
